@@ -1,12 +1,13 @@
 
 import React from 'react';
+import { Loader2 } from 'lucide-react';
 
 export function LoadingSpinner() {
   return (
-    <div className="flex items-center justify-center p-8">
-      <div className="relative">
-        <div className="w-12 h-12 rounded-full border-4 border-muted-foreground/20"></div>
-        <div className="absolute top-0 left-0 w-12 h-12 rounded-full border-4 border-transparent border-t-lottery-pink animate-spin"></div>
+    <div className="flex items-center justify-center py-8">
+      <div className="flex flex-col items-center space-y-3">
+        <Loader2 className="h-8 w-8 animate-spin text-lottery-blue" />
+        <p className="text-sm text-muted-foreground">Cargando resultados...</p>
       </div>
     </div>
   );

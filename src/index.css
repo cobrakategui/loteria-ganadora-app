@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,47 +7,57 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.75rem;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
   }
 
   .dark {
-    --background: 240 5% 8%;
-    --foreground: 0 0% 98%;
-    --card: 240 5% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 5% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 4% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 4% 15%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 4% 15%;
-    --accent-foreground: 0 0% 98%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 4% 15%;
-    --input: 240 4% 15%;
-    --ring: 240 4.9% 83.9%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
@@ -54,172 +65,144 @@
   * {
     @apply border-border;
   }
-  
   body {
-    @apply bg-background text-foreground font-inter;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    background-color: hsl(0 0% 100%);
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
-  
-  body.dark {
-    background-color: hsl(240 5% 8%);
-  }
-  
-  .lottery-number {
-    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm;
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 1px 3px rgba(59, 130, 246, 0.2);
-  }
-  
-  .lottery-number-mas {
-    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm;
-    background: #60a5fa;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .lottery-number-super {
-    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm;
-    background: #ef4444;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
+}
+
+@layer components {
   .lottery-card {
-    @apply bg-card/80 rounded-xl p-4 border border-border/30 backdrop-blur-md;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0.03) 50%, rgba(29, 78, 216, 0.02) 100%);
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.05);
-  }
-  
-  .nav-item {
-    @apply flex flex-col items-center justify-center py-2 px-3 rounded-lg transition-all duration-200 min-h-[60px];
-  }
-  
-  .nav-item.active {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
-    @apply text-white;
-    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
-  }
-  
-  .gradient-text {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply bg-card rounded-xl p-4 border border-border shadow-sm hover:shadow-md transition-all duration-200;
   }
 
-  .bg-lottery-gradient {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+  .lottery-number {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg;
   }
 
-  .text-lottery-blue {
-    color: #3b82f6;
+  .lottery-number-mas {
+    @apply bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg;
   }
 
-  @keyframes confetti {
-    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-  }
-
-  @keyframes slideInUp {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
-  }
-
-  .animate-confetti {
-    animation: confetti 3s linear infinite;
-  }
-
-  .animate-slide-up {
-    animation: slideInUp 0.5s ease-out;
-  }
-
-  .animate-pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
-
-  .date-picker-input {
-    cursor: pointer;
-  }
-
-  .date-picker-input::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  .numbers-scroll {
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #3b82f6 transparent;
-  }
-
-  .numbers-scroll::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .numbers-scroll::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .numbers-scroll::-webkit-scrollbar-thumb {
-    background: #3b82f6;
-    border-radius: 2px;
+  .lottery-number-super {
+    @apply bg-gradient-to-r from-red-400 to-red-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg;
   }
 
   .numbers-container {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-width: max-content;
+    @apply flex flex-wrap gap-2;
   }
 
   .numbers-container-horizontal {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    min-width: max-content;
+    @apply flex gap-2 overflow-x-auto pb-2;
   }
 
-  .numbers-container-horizontal::-webkit-scrollbar {
-    height: 4px;
+  .numbers-scroll {
+    @apply w-full;
   }
 
-  .numbers-container-horizontal::-webkit-scrollbar-track {
-    background: transparent;
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold;
   }
 
-  .numbers-container-horizontal::-webkit-scrollbar-thumb {
-    background: #3b82f6;
-    border-radius: 2px;
+  .bg-lottery-gradient {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center justify-center py-2 px-3 rounded-lg transition-all duration-200 min-w-0 flex-1;
+  }
+
+  .nav-item.active {
+    @apply bg-lottery-gradient text-white;
+  }
+
+  .date-picker-input {
+    @apply cursor-pointer;
+  }
+
+  .date-picker-input::-webkit-calendar-picker-indicator {
+    @apply cursor-pointer;
   }
 }
 
-/* Scrollbar styles */
-::-webkit-scrollbar {
-  width: 6px;
+@layer utilities {
+  .text-lottery-blue {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  .text-lottery-purple {
+    @apply text-purple-600 dark:text-purple-400;
+  }
+
+  .text-lottery-pink {
+    @apply text-pink-600 dark:text-pink-400;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+
+  .animate-confetti {
+    animation: confetti 3s ease-out infinite;
+  }
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-background;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  @apply rounded-full;
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+@keyframes confetti {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Estilos para scrollbars */
+.numbers-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.numbers-scroll::-webkit-scrollbar-track {
+  @apply bg-muted rounded;
+}
+
+.numbers-scroll::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground rounded;
+}
+
+.numbers-scroll::-webkit-scrollbar-thumb:hover {
+  @apply bg-foreground;
 }
