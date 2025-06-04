@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,22 +25,20 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --lottery-blue: 219 78% 56%;
+    --lottery-purple: 267 84% 72%;
+    --lottery-red: 0 84% 60%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 217 19% 15%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 222 19% 20%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 222 19% 20%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
+    --primary: 0 0% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -53,11 +51,9 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --lottery-blue: 219 78% 56%;
+    --lottery-purple: 267 84% 72%;
+    --lottery-red: 0 84% 60%;
   }
 }
 
@@ -72,137 +68,101 @@
 }
 
 @layer components {
-  .lottery-card {
-    @apply bg-card rounded-xl p-4 border border-border shadow-sm hover:shadow-md transition-all duration-200;
-  }
-
-  .lottery-number {
-    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg;
-  }
-
-  .lottery-number-mas {
-    @apply bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg;
-  }
-
-  .lottery-number-super {
-    @apply bg-gradient-to-r from-red-400 to-red-600 text-white rounded-lg w-12 h-12 flex items-center justify-center font-bold text-lg shadow-lg;
-  }
-
-  .numbers-container {
-    @apply flex flex-wrap gap-2;
-  }
-
-  .numbers-container-horizontal {
-    @apply flex gap-2 overflow-x-auto pb-2;
-  }
-
-  .numbers-scroll {
-    @apply w-full;
-  }
-
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold;
+    @apply bg-gradient-to-r from-[#4B53EA] to-[#813BEA] bg-clip-text text-transparent;
   }
 
   .bg-lottery-gradient {
-    @apply bg-gradient-to-r from-blue-500 to-purple-600;
+    @apply bg-gradient-to-r from-[#4B53EA] to-[#813BEA];
+  }
+
+  .lottery-card {
+    @apply bg-card rounded-xl border border-border shadow-lg hover:shadow-xl transition-all duration-200;
+  }
+
+  .lottery-number {
+    @apply w-12 h-12 rounded-full bg-gradient-to-r from-[#4B53EA] to-[#813BEA] flex items-center justify-center text-white font-bold text-sm shadow-lg transform transition-transform hover:scale-105;
+  }
+
+  .lottery-number-loto1 {
+    @apply w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-sm shadow-lg;
+  }
+
+  .lottery-number-loto2 {
+    @apply w-12 h-12 rounded-full bg-red-500 flex items-center justify-center text-white font-bold text-sm shadow-lg;
+  }
+
+  .delayed-number {
+    @apply w-10 h-10 rounded-full bg-gradient-to-r from-[#4B53EA] to-[#813BEA] flex items-center justify-center text-white font-bold text-sm shadow-md;
   }
 
   .nav-item {
-    @apply flex flex-col items-center justify-center py-2 px-3 rounded-lg transition-all duration-200 min-w-0 flex-1;
+    @apply flex flex-col items-center justify-center p-2 rounded-lg transition-all duration-200 min-w-[60px];
   }
 
   .nav-item.active {
-    @apply bg-lottery-gradient text-white;
+    @apply bg-lottery-gradient shadow-lg;
   }
 
-  .date-picker-input {
-    @apply cursor-pointer;
-  }
-
-  .date-picker-input::-webkit-calendar-picker-indicator {
-    @apply cursor-pointer;
+  .nav-item:not(.active):hover {
+    @apply bg-muted;
   }
 }
 
-@layer utilities {
-  .text-lottery-blue {
-    @apply text-blue-600 dark:text-blue-400;
-  }
-
-  .text-lottery-purple {
-    @apply text-purple-600 dark:text-purple-400;
-  }
-
-  .text-lottery-pink {
-    @apply text-pink-600 dark:text-pink-400;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.3s ease-out;
-  }
-
-  .animate-bounce-in {
-    animation: bounceIn 0.6s ease-out;
-  }
-
-  .animate-confetti {
-    animation: confetti 3s ease-out infinite;
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+::-webkit-scrollbar-track {
+  @apply bg-muted;
 }
 
-@keyframes bounceIn {
+::-webkit-scrollbar-thumb {
+  @apply bg-lottery-gradient rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply opacity-80;
+}
+
+/* Number reveal animation */
+@keyframes numberReveal {
   0% {
     opacity: 0;
-    transform: scale(0.3);
+    transform: scale(0.8) rotate(-10deg);
   }
   50% {
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
+    transform: scale(1.1) rotate(5deg);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
 }
 
-@keyframes confetti {
-  0% {
-    transform: translateY(-100vh) rotate(0deg);
-    opacity: 1;
+.number-reveal {
+  animation: numberReveal 0.6s ease-out forwards;
+}
+
+.number-reveal:nth-child(1) { animation-delay: 0.1s; }
+.number-reveal:nth-child(2) { animation-delay: 0.2s; }
+.number-reveal:nth-child(3) { animation-delay: 0.3s; }
+.number-reveal:nth-child(4) { animation-delay: 0.4s; }
+.number-reveal:nth-child(5) { animation-delay: 0.5s; }
+.number-reveal:nth-child(6) { animation-delay: 0.6s; }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .container {
+    @apply px-2;
   }
-  100% {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
+  
+  .nav-item {
+    @apply min-w-[50px] p-1;
   }
-}
-
-/* Estilos para scrollbars */
-.numbers-scroll::-webkit-scrollbar {
-  height: 4px;
-}
-
-.numbers-scroll::-webkit-scrollbar-track {
-  @apply bg-muted rounded;
-}
-
-.numbers-scroll::-webkit-scrollbar-thumb {
-  @apply bg-muted-foreground rounded;
-}
-
-.numbers-scroll::-webkit-scrollbar-thumb:hover {
-  @apply bg-foreground;
+  
+  .lottery-number {
+    @apply w-10 h-10 text-xs;
+  }
 }

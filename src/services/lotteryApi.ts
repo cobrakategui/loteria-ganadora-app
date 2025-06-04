@@ -58,41 +58,95 @@ export class LotteryAPI {
     return this.fetchWithHeaders(`${BASE_URL}/loto`);
   }
 
-  // Métodos de utilidad para categorización
+  // Utility methods for correct categorization
   static getCategoryByName(nombre: string): string {
     const name = nombre.toLowerCase();
     
-    if (name.includes('leidsa')) return 'Leidsa';
-    if (name.includes('real') || name.includes('dominicana')) return 'Real';
-    if (name.includes('loteka')) return 'Loteka';
-    if (name.includes('primera')) return 'Primera';
-    if (name.includes('suerte')) return 'La Suerte';
-    if (name.includes('lotedom')) return 'LoteDom';
-    if (name.includes('king')) return 'King Lottery';
-    if (name.includes('anguila')) return 'Anguila';
-    if (name.includes('americana') || name.includes('powerball') || name.includes('mega millions')) return 'Americanas';
+    // Lotería Nacional
+    if (name.includes('gana mas') || name.includes('gana más') || 
+        name.includes('juega') || name.includes('pega') || 
+        name.includes('loteria nacional') || name.includes('lotería nacional')) {
+      return 'Loteria Nacional';
+    }
     
-    return 'Nacional';
+    // Leidsa
+    if (name.includes('leidsa') || name.includes('loto pool') || 
+        name.includes('super kino') || name.includes('quiniela leidsa') ||
+        name.includes('loto leidsa') || name.includes('pega 3 mas') || name.includes('pega 3 más')) {
+      return 'Leidsa';
+    }
+    
+    // Real
+    if (name.includes('real')) {
+      return 'Real';
+    }
+    
+    // Loteka
+    if (name.includes('loteka') || name.includes('mega')) {
+      return 'Loteka';
+    }
+    
+    // Americanas
+    if (name.includes('new york') || name.includes('florida') || 
+        name.includes('powerball') || name.includes('mega millions') || 
+        name.includes('cash4life')) {
+      return 'Americanas';
+    }
+    
+    // Primera
+    if (name.includes('primera') || name.includes('loto 5')) {
+      return 'Primera';
+    }
+    
+    // La Suerte
+    if (name.includes('suerte')) {
+      return 'La Suerte';
+    }
+    
+    // LoteDom
+    if (name.includes('lotedom') || name.includes('quemaito')) {
+      return 'LoteDom';
+    }
+    
+    // King Lottery
+    if (name.includes('king lottery') || name.includes('king')) {
+      return 'King Lottery';
+    }
+    
+    // Anguila
+    if (name.includes('anguila')) {
+      return 'Anguila';
+    }
+    
+    return 'Otras';
   }
 
   static getCategoryByCompanyId(companyId: number): string {
     switch (companyId) {
-      case 1: return 'Leidsa';
-      case 2: return 'Real';
+      case 1: return 'Loteria Nacional';
+      case 2: return 'Leidsa';
       case 3: return 'Loteka';
       case 4: return 'Primera';
-      case 5: return 'La Suerte';
-      case 6: return 'LoteDom';
-      case 7: return 'King Lottery';
-      case 8: return 'Anguila';
-      case 9: return 'Americanas';
-      default: return 'Nacional';
+      case 5: return 'LoteDom';
+      case 6: return 'Real';
+      case 7: return 'Anguila';
+      case 8: return 'La Suerte';
+      case 9: return 'King Lottery';
+      case 10: return 'Americanas';
+      case 1000: return 'Loterías Dominicanas';
+      default: return 'Otras';
     }
   }
 
   static filterLotteriesByCategory(lotteries: LotteryResult[], category: string): LotteryResult[] {
     return lotteries.filter(lottery => {
-      const lotteryCategory = this.getCategoryByName(lottery.nombre) || this.getCategoryByCompanyId(lottery.company_id);
+      const lotteryCategory = this.getCategoryByName(lottery.nombre);
+      
+      if (lotteryCategory === 'Otras') {
+        const categoryByCompany = this.getCategoryByCompanyId(lottery.company_id);
+        return categoryByCompany === category;
+      }
+      
       return lotteryCategory === category;
     });
   }
