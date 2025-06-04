@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
@@ -18,7 +17,6 @@ export function Results() {
   const { t } = useLanguage();
   const [lotteries, setLotteries] = useState<LotteryResult[]>([]);
   const [filteredLotteries, setFilteredLotteries] = useState<LotteryResult[]>([]);
-  const [categories, setCategories] = useState<LotteryCategory[]>([]);
   const [delayedNumbers, setDelayedNumbers] = useState<string>('');
   const [loading, setLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState('');
@@ -152,7 +150,7 @@ export function Results() {
 
   const favoriteLotteries = filteredLotteries.filter(lottery => favorites.includes(lottery.id));
 
-  const categories = ['Todas', 'Nacional', 'Leidsa', 'Real', 'Loteka', 'Americanas', 'Primera', 'La Suerte', 'LoteDom', 'King Lottery', 'Anguila'];
+  const categoryOptions = ['Todas', 'Nacional', 'Leidsa', 'Real', 'Loteka', 'Americanas', 'Primera', 'La Suerte', 'LoteDom', 'King Lottery', 'Anguila'];
 
   return (
     <div className="space-y-4">
@@ -177,7 +175,7 @@ export function Results() {
               <SelectValue placeholder="Todas las loterías" />
             </SelectTrigger>
             <SelectContent className="bg-popover">
-              {categories.map((category) => (
+              {categoryOptions.map((category) => (
                 <SelectItem key={category} value={category}>
                   {category === 'Todas' ? 'Todas las loterías' : category}
                 </SelectItem>
