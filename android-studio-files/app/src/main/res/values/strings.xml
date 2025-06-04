@@ -1,0 +1,108 @@
+
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Loterías Dominicanas</string>
+    <string name="app_subtitle">Resultados en tiempo real</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Inicio</string>
+    <string name="nav_generator">Generador</string>
+    <string name="nav_predictions">Predicciones</string>
+    <string name="nav_history">Historial</string>
+    <string name="nav_settings">Configuración</string>
+    
+    <!-- Home Screen -->
+    <string name="home_title">Resultados de Loterías</string>
+    <string name="search_hint">Buscar por nombre...</string>
+    <string name="category_all">Todas</string>
+    <string name="category_nacional">Lotería Nacional</string>
+    <string name="category_leidsa">Leidsa</string>
+    <string name="category_real">Real</string>
+    <string name="category_loteka">Loteka</string>
+    <string name="category_americanas">Americanas</string>
+    <string name="category_primera">Primera</string>
+    <string name="category_suerte">La Suerte</string>
+    <string name="category_lotedom">LoteDom</string>
+    <string name="category_king">King Lottery</string>
+    <string name="category_anguila">Anguila</string>
+    
+    <!-- Lottery Card -->
+    <string name="winning_numbers">Números Ganadores</string>
+    <string name="no_results">Sin resultados disponibles</string>
+    <string name="view_previous">Ver anterior</string>
+    <string name="share_result">Compartir</string>
+    <string name="view_statistics">Estadísticas</string>
+    <string name="download">Descargar</string>
+    <string name="print">Imprimir</string>
+    <string name="first">1ro</string>
+    <string name="second">2do</string>
+    <string name="third">3ro</string>
+    
+    <!-- Generator Screen -->
+    <string name="generator_title">Generador de Números</string>
+    <string name="generator_subtitle">Genera números de la suerte usando diferentes métodos</string>
+    <string name="random_generator">Generador Aleatorio</string>
+    <string name="dreams_generator">Generador por Sueños</string>
+    <string name="birthday_generator">Generador por Edad</string>
+    <string name="coffee_generator">Lectura de Café</string>
+    <string name="generate_numbers">Generar Números</string>
+    <string name="generated_numbers">Números Generados</string>
+    <string name="unlock_premium">Desbloquear con Premium</string>
+    
+    <!-- Premium/Subscription -->
+    <string name="premium_title">Suscripción Premium</string>
+    <string name="premium_subtitle">Desbloquea todas las funciones</string>
+    <string name="monthly_plan">Plan Mensual</string>
+    <string name="quarterly_plan">Plan Trimestral</string>
+    <string name="yearly_plan">Plan Anual</string>
+    <string name="monthly_price">$2.99/mes</string>
+    <string name="quarterly_price">$7.99/3 meses</string>
+    <string name="yearly_price">$24.99/año</string>
+    <string name="best_offer">¡Mejor oferta!</string>
+    <string name="feature_no_ads">Sin anuncios</string>
+    <string name="feature_all_generators">Todos los generadores</string>
+    <string name="feature_notifications">Notificaciones diarias</string>
+    <string name="subscription_terms">Los pagos se cargarán a tu cuenta de Google Play. La suscripción se renovará automáticamente.</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Configuración</string>
+    <string name="theme_setting">Tema</string>
+    <string name="theme_light">Modo Claro</string>
+    <string name="theme_dark">Modo Oscuro</string>
+    <string name="language_setting">Idioma</string>
+    <string name="notifications_setting">Notificaciones</string>
+    <string name="about">Acerca de</string>
+    <string name="privacy_policy">Política de Privacidad</string>
+    
+    <!-- Loading and Error States -->
+    <string name="loading">Cargando...</string>
+    <string name="loading_results">Cargando resultados...</string>
+    <string name="error_loading">Error al cargar</string>
+    <string name="no_internet">Sin conexión a internet</string>
+    <string name="retry">Reintentar</string>
+    
+    <!-- Delayed Numbers -->
+    <string name="delayed_numbers">Números más atrasados:</string>
+    
+    <!-- Actions -->
+    <string name="close">Cerrar</string>
+    <string name="continue_action">Continuar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">OK</string>
+    <string name="refresh">Actualizar</string>
+    
+    <!-- Date Format -->
+    <string name="today_results">Resultados de Hoy -</string>
+    
+    <!-- Company Names -->
+    <string name="company_nacional">Lotería Nacional</string>
+    <string name="company_leidsa">Leidsa</string>
+    <string name="company_real">Lotería Real</string>
+    <string name="company_loteka">Loteka</string>
+    <string name="company_primera">La Primera</string>
+    <string name="company_lotedom">LoteDom</string>
+    <string name="company_suerte">La Suerte</string>
+    <string name="company_king">King Lottery</string>
+    <string name="company_anguila">Anguila</string>
+    <string name="company_americanas">Loterías USA</string>
+</resources>
