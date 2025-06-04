@@ -1,0 +1,1538 @@
+I want to make a website like an application fully responsive also for mobile and desktop, header logo and text, my app its a "Loterias Dominicanas" results of lotteries of the Dominican Republic, thats the name "Loterias Dominicanas Today",  a option to change whole site theme dark to light or light to dark and theme changed its saved in locally database to remember theme chosed by user, the site will be develop in spanish language to the dominican people but also if able a option to change language (ES/EN) i mean (Spanish or English) and the selection of the language its also saved in locally database, this option of language will be below of theme option in the settings tab, there will be a navigation bar in bottom fixed, this navigation bar with the tabs "Results or Resultados in spanish", "Sorteos or Categorias",  "Hot Numbers" this will be the hot numbers to shot catchin with the api of course, "Generador or Gnerador de Combinaciones" there will be many tools to generate numbers - reading cup marks and how the person feel when look in the coffee cup feelings and description date of born of the person, dreams interpretation, zodiac interpretation lucky numbers, what means in the dream appear a animal dog cat or something, what feeling in the dreams the description of all so many tools be creative adding tools that can be enjoyed by the user and the numbers generated can be shared, and will be a history at final of the section with the list gistory of numbers generated with a button to share  or delete history because we want to save history in local database - and make all look well and organized all sections with icons that interprete every section dreams luck animals etc be creative, and the "Settings or Configuraciones tab" there in settings theme option firts then language option, then contact info like social network links "@loteriasrdtoday" and button share to share the website with a custom message to invite look into the site, also a download app button thats because im planning to publish an app in google playstore and apple market this button will open a floating modal with the option to download the app on apple store or Google Play store, and below about button that shows a modal of about info with also the name of the dev "Develop by or Desarrollado por" name of the dev "Lovable" maded with love, and continuing with the list of option below about will be privacy policies button and also open a modal floaring with the privacy policy of the site, and not in a button but yes in the design will be a text name of the site + copyright text 2025, all of the buttons with icons and awesome icons and card list items clickables, all beautiful design. 
+
+and now here i will upload the look like screenshots just look like the screenshots but not the same lotteries and categories can be filtered in search and in results home section there will be a tab to show selected categories at first and default selected categorie All, and the other categories parse with the api the categories companies lotteries, the search the date picker to request results with date and the categories tab below search and date section, and well here below all the information about the functions and resources to take and referenced to to make a well working modern website app:
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:24 PM]
+API LOTERIAS DOMINICANAS:
+https://elboletoganador.com/
+
+results api: 
+https://api3.bolillerobingoonlinegratis.com/api/companies
+https://api3.bolillerobingoonlinegratis.com/api/companies/loterias
+
+json format:
+
+{
+  "loteria": [
+    {
+      "id": 36,
+      "nombre": "Anguila 10:00 AM",
+      "numero_total": 100,
+      "cantidad_premios": 3,
+      "codigo": null,
+      "created_at": null,
+      "updated_at": null,
+      "isLoto": 0,
+      "busquedad": 0,
+      "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/anguila-10-am.png",
+      "company_id": 7,
+      "hora": "10:00 AM",
+      "quinielaDom": 1,
+      "titulo": "Anguila 10 AM",
+      "descripcion": "El sorteo de la Lotería Anguila es un juego de azar del caribe que se lleva a cabo con tres globos con bolos numerados del 00 al 99. Esta lotería se realiza cuatro veces al día: a las 10:00 am, 1:00 pm, 6:00 pm y a las 9:00 de la noche.",
+      "orden": null,
+      "img2": "angui.png",
+      "posicion": 1,
+      "pais": "AN",
+      "ultimo_sorteo": {
+        "id": 188318,
+        "premios": "82-63-41",
+        "numero_sorteo": null,
+        "fecha_sorteo": "2025-06-03",
+        "loteria_id": 36,
+        "created_at": "2025-06-03T14:08:13.000000Z",
+        "updated_at": "2025-06-03T14:08:13.000000Z",
+        "loto1": null,
+        "loto2": null
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "Loto Leidsa",
+      "numero_total": 40,
+      "cantidad_premios": 6,
+      "codigo": null,
+      "created_at": "2023-05-19T08:37:48.000000Z",
+      "updated_at": "2023-05-19T08:37:48.000000Z",
+      "isLoto": 1,
+      "busquedad": 3,
+      "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/loto-leidsa.png",
+      "company_id": 2,
+      "hora": "08:55 PM",
+      "quinielaDom": 0,
+      "titulo": "LOTO LEIDSA (MIERCOLE & JUEVES - 8:55 PM)",
+      "descripcion": "LEIDSA te da la bienvenida a su juego insignia, la lotería electrónica líder en la República Dominicana. Ofrece tres emocionantes opciones: Loto, MAS y Supermas, con premios impresionantes que llegan hasta los RD$315 millones.",
+      "orden": null,
+      "img2": "ll.png",
+      "posicion": null,
+      "pais": "RD",
+      "ultimo_sorteo": {
+        "id": 188246,
+        "premios": "11-16-19-20-24-26 ",
+        "numero_sorteo": null,
+        "fecha_sorteo": "2025-05-31",
+        "loteria_id": 9,
+        "created_at": "2025-06-01T01:01:38.000000Z",
+        "updated_at": "2025-06-01T01:01:38.000000Z",
+        "loto1": 11,
+        "loto2": 6
+      }
+    }
+  ],
+  "atrasados": "39-86-07-48-71-54-23-46-04-81"
+}
+
+
+also an example of getting details of the only one lottery result, of the main api url can ask with the id of the lottery selected to view only one lottery result:
+https://api3.bolillerobingoonlinegratis.com/api/loterias/36
+
+json format for the selected lottery only one to show:
+{
+    "id": 36,
+    "nombre": "Anguila 10:00 AM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "codigo": null,
+    "created_at": null,
+    "updated_at": null,
+    "isLoto": 0,
+    "busquedad": 0,
+    "image": "https:\/\/cdn-lottery.kiskoo.com\/loterias-dominicanas\/anguila-10-am.png",
+    "company_id": 7,
+    "hora": "10:00 AM",
+    "quinielaDom": 1,
+    "titulo": "Anguila 10 AM",
+    "descripcion": "El sorteo de la Loter\u00eda Anguila.",
+    "orden": null,
+    "img2": "angui.png",
+    "posicion": 1,
+    "pais": "AN"
+}
+
+
+results api with date:
+https://api3.bolillerobingoonlinegratis.com/api/companies/buscar/loterias?fecha=2025-06-02&companies=0
+
+
+json format: (its the same as results lottery this is just a date filter to filter by date the lotteries in the api).
+
+results api by category: (just use the id of the lottery of the company extracted from the main lottery results api:
+* example company - loterias dominicanas - position 1:
+https://api3.bolillerobingoonlinegratis.com/api/companies/buscar/loterias?fecha=2025-06-02&companies=1
+
+example company 2 (leidsa):
+https://api3.bolillerobingoonlinegratis.com/api/companies/buscar/loterias?fecha=2025-06-02&companies=2
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:24 PM]
+there is a company tag in the json result from main lotteries results api, example: format of the lotteries json: 
+{
+  "loteria": [
+    {
+      "id": "",
+      "nombre": "",
+      "numero_total": "",
+      "cantidad_premios": "",
+      "codigo": "",
+      "created_at": "",
+      "updated_at": "",
+      "isLoto": "",
+      "busquedad": "",
+      "image": "",
+      "company_id": "",
+      "hora": "",
+      "quinielaDom": "",
+      "titulo": "",
+      "descripcion": "",
+      "orden": "",
+      "img2": "",
+      "posicion": "",
+      "pais": "",
+      "ultimo_sorteo": {
+        "id": "",
+        "premios": "",
+        "numero_sorteo": "",
+        "fecha_sorteo": "",
+        "loteria_id": "",
+        "created_at": "",
+        "updated_at": "",
+        "loto1": "",
+        "loto2": ""
+      }
+    }
+  ],
+  "loto": [
+    {
+      "id": "",
+      "nombre": "",
+      "numero_total": "",
+      "cantidad_premios": "",
+      "codigo": "",
+      "created_at": "",
+      "updated_at": "",
+      "isLoto": "",
+      "busquedad": "",
+      "image": "",
+      "company_id": "",
+      "hora": "",
+      "quinielaDom": "",
+      "titulo": "",
+      "descripcion": "",
+      "orden": "",
+      "img2": "",
+      "posicion": "",
+      "pais": "",
+      "ultimo_sorteo": {
+        "id": "",
+        "premios": "",
+        "numero_sorteo": "",
+        "fecha_sorteo": "",
+        "loteria_id": "",
+        "created_at": "",
+        "updated_at": "",
+        "loto1": "",
+        "loto2": ""
+      }
+    }
+  ],
+  "atrasados": ""
+}
+
+theres the ( "company_id": ), this is the tag to identify the company name that means the category like "Leidsa", "Loteria Nacional". "La Primera", etc.
+and clarify that the api link always or most of the time takes the date prompt to the url api request or also can be like this to request the companies list: "https://api3.bolillerobingoonlinegratis.com/api/companies/buscar/loterias?companies=2".
+
+
+some details how works the structure of header request in the api, are some examples not all its what needed to use but to make sure some request are clean:
+
+:authority
+api3.bolillerobingoonlinegratis.com
+:method
+GET
+:path
+/api/companies/buscar/loterias?fecha=2025-06-03&companies=1
+:scheme
+https
+accept
+application/json
+accept-encoding
+gzip, deflate, br, zstd
+accept-language
+en,es-ES;q=0.9,es;q=0.8,zh-CN;q=0.7,zh;q=0.6,pt;q=0.5
+origin
+https://elboletoganador.com
+priority
+u=1, i
+referer
+https://elboletoganador.com/
+sec-ch-ua
+"Chromium";v="136", "Google Chrome";v="136", "Not.A/Brand";v="99"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-platform
+"Windows"
+sec-fetch-dest
+empty
+sec-fetch-mode
+cors
+sec-fetch-site
+cross-site
+user-agent
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+
+
+here the history results of a lottery selected, just a history of some dates like the last 20 results of an specific lottery:
+https://api3.bolillerobingoonlinegratis.com/api/sorteos/buscar/historial?id=36&fecha=2025-06-03
+
+also a example of the json:
+
+{
+    "historial": [
+        {
+            "id": 188318,
+            "premios": "82-63-41",
+            "numero_sorteo": null,
+            "fecha_sorteo": "2025-06-03",
+            "loteria_id": 36,
+            "created_at": "2025-06-03T14:08:13.000000Z",
+            "updated_at": "2025-06-03T14:08:13.000000Z",
+            "loto1": null,
+            "loto2": null
+        },
+        {
+            "id": 188288,
+            "premios": "59-98-36",
+            "numero_sorteo": null,
+            "fecha_sorteo": "2025-06-02",
+            "loteria_id": 36,
+            "created_at": "2025-06-02T14:03:58.000000Z",
+            "updated_at": "2025-06-02T14:03:58.000000Z",
+            "loto1": null,
+            "loto2": null
+        }
+    ],
+    "numerosRepetidos": [
+        82,
+        63,
+        98,
+        36,
+        26,
+        70,
+        1,
+        39,
+        37
+    ]
+}
+
+api to generate a table of the most winning numbers of a lottery selected:
+https://api3.bolillerobingoonlinegratis.com/api/tabla/create?loteria_id=38&fecha=2025-03-01&posicion=0
+
+json format example:
+[
+    {
+        "ultimaFecha": "2024-11-06",
+        "diasTranscurridos": 200,
+        "numero": "30",
+        "retrasoMax": 202
+    },
+    {
+        "ultimaFecha": "2024-11-13",
+        "diasTranscurridos": 193,
+        "numero": "23",
+        "retrasoMax": 211
+    },
+    {
+        "ultimaFecha": "2024-12-30",
+        "diasTranscurridos": 147,
+        "numero": "65",
+        "retrasoMax": 150
+    }
+]
+
+api lotteries predictions lottery selected predictions, numbers hot predictions:
+https://api3.bolillerobingoonlinegratis.com/api/predicciones?loteria_id=33&fecha=2025-06-03
+
+json format example: 
+{
+    "prediccion": [
+        {
+            "id": 83050,
+            "fecha": "2025-06-03",
+            "loteria_id": 5,
+            "tipo": "Tabla Caliente",
+            "numeros": "67-35-41-30-42-28-40-63-99-32",
+            "created_at": "2025-06-03T01:04:13.000000Z",
+            "updated_at": "2025-06-03T01:04:13.000000Z",
+            "dias": "3-3-2-2-2-2-2-2-2-2"
+        },
+        {
+            "id": 83051,
+            "fecha": "2025-06-03",
+            "loteria_id": 5,
+            "tipo": "Tabla Numeros",
+            "numeros": "43-79-39-06-98-54-12-86-25-84",
+            "created_at": "2025-06-03T01:04:20.000000Z",
+            "updated_at": "2025-06-03T01:04:20.000000Z",
+            "dias": "438-376-368-354-352-331-281-279-273-257"
+        },
+        {
+            "id": 83052,
+            "fecha": "2025-06-03",
+            "loteria_id": 5,
+            "tipo": "Tabla Un Dia Como Hoy",
+            "numeros": "98-14-15-52-53-83-42-72-56-76",
+            "created_at": "2025-06-03T01:04:20.000000Z",
+            "updated_at": "2025-06-03T01:04:20.000000Z",
+            "dias": "9-8-7-7-6-6-6-6-6-6"
+        }
+    ],
+    "loteria": {
+        "id": 5,
+        "nombre": "Quiniela Leidsa",
+        "numero_total": 100,
+        "cantidad_premios": 3,
+        "codigo": null,
+        "created_at": "2023-05-19T08:33:10.000000Z",
+        "updated_at": "2023-05-19T08:33:10.000000Z",
+        "isLoto": 0,
+        "busquedad": 0,
+        "image": "https:\/\/cdn-lottery.kiskoo.com\/loterias-dominicanas\/quiniela-leidsa.png",
+        "company_id": 2,
+        "hora": "09:00 PM",
+        "quinielaDom": 1,
+        "titulo": "QUINIELA LEIDSA (8:55 PM)",
+        "descripcion": "En el emocionante sorteo de Leidsa. ",
+        "orden": null,
+        "img2": "qp.png",
+        "posicion": 17,
+        "pais": "RD"
+    },
+    "sorteo": {
+        "id": 188307,
+        "premios": "31-85-14",
+        "numero_sorteo": null,
+        "fecha_sorteo": "2025-06-02",
+        "loteria_id": 5,
+        "created_at": "2025-06-03T01:04:13.000000Z",
+        "updated_at": "2025-06-03T01:04:13.000000Z",
+        "loto1": null,
+        "loto2": null
+    }
+}
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 8:04 PM]
+CONTINUED BUT PUT AT FIRST:
+
+lotteries categories:
+https://api3.bolillerobingoonlinegratis.com/api/loterias
+
+json result example:
+[
+  {
+    "id": 4,
+    "nombre": "Loteria Nacional",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 5,
+    "nombre": "Quiniela Leidsa",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 6,
+    "nombre": "Quiniela Loteka",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 7,
+    "nombre": "Loto Pool",
+    "numero_total": 31,
+    "cantidad_premios": 5,
+    "isLoto": 1
+  },
+  {
+    "id": 8,
+    "nombre": "Super Kino Tv",
+    "numero_total": 80,
+    "cantidad_premios": 20,
+    "isLoto": 1
+  },
+  {
+    "id": 9,
+    "nombre": "Loto Leidsa",
+    "numero_total": 40,
+    "cantidad_premios": 6,
+    "isLoto": 1
+  },
+  {
+    "id": 10,
+    "nombre": "Loto 5",
+    "numero_total": 38,
+    "cantidad_premios": 5,
+    "isLoto": 1
+  },
+  {
+    "id": 11,
+    "nombre": "Mega Lotto",
+    "numero_total": 38,
+    "cantidad_premios": 6,
+    "isLoto": 1
+  },
+  {
+    "id": 12,
+    "nombre": "Gana Mas",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 13,
+    "nombre": "Quiniela Real",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 15,
+    "nombre": "Quiniela LoteDom",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 16,
+    "nombre": "New York 2:30",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 17,
+    "nombre": "New York 10:30",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 18,
+    "nombre": "La Primera Noche",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 20,
+    "nombre": "La Primera Tarde",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 21,
+    "nombre": "La Suerte MD",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 23,
+    "nombre": "Pega 3 Mas",
+    "numero_total": 51,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 24,
+    "nombre": "Power Ball",
+    "numero_total": 69,
+    "cantidad_premios": 5,
+    "isLoto": 1
+  },
+  {
+    "id": 26,
+    "nombre": "Mega Millions",
+    "numero_total": 70,
+    "cantidad_premios": 5,
+    "isLoto": 1
+  },
+  {
+    "id": 27,
+    "nombre": "Mega Chance",
+    "numero_total": 99,
+    "cantidad_premios": 5,
+    "isLoto": 1
+  },
+  {
+    "id": 29,
+    "nombre": "La Suerte 6PM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 30,
+    "nombre": "TODAS LAS QUINIELAS",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 31,
+    "nombre": "Florida Dia",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 32,
+    "nombre": "Florida Noche",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 33,
+    "nombre": "King Lottery AM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 34,
+    "nombre": "King Lottery PM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 36,
+    "nombre": "Anguila 10:00 AM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 37,
+    "nombre": "Anguila 1:00 PM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 38,
+    "nombre": "Anguila 6:00 PM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 39,
+    "nombre": "Cash4Life",
+    "numero_total": 60,
+    "cantidad_premios": 5,
+    "isLoto": 1
+  },
+  {
+    "id": 40,
+    "nombre": "Anguila 9:00 PM",
+    "numero_total": 100,
+    "cantidad_premios": 3,
+    "isLoto": 0
+  },
+  {
+    "id": 41,
+    "nombre": "Loto Real",
+    "numero_total": 38,
+    "cantidad_premios": 6,
+    "isLoto": 1
+  }
+]
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 8:09 PM]
+loto category api (it means not only leidsa loto, it means all loto results companies).
+https://api3.bolillerobingoonlinegratis.com/api/loto
+
+result json example:
+[
+  {
+    "id": 7,
+    "nombre": "Loto Pool",
+    "numero_total": 31,
+    "cantidad_premios": 5,
+    "codigo": null,
+    "created_at": "2023-05-19T08:35:54.000000Z",
+    "updated_at": "2023-05-19T08:35:54.000000Z",
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/loto-pool-leidsa.png",
+    "company_id": 2,
+    "hora": "08:55 PM",
+    "quinielaDom": 0,
+    "titulo": "LOTO POOL (8:55 PM)",
+    "descripcion": "LotoPool de LEIDSA. ",
+    "orden": null,
+    "img2": "lp.png",
+    "posicion": null,
+    "pais": "RD"
+  },
+  {
+    "id": 8,
+    "nombre": "Super Kino Tv",
+    "numero_total": 80,
+    "cantidad_premios": 20,
+    "codigo": null,
+    "created_at": "2023-05-19T08:36:57.000000Z",
+    "updated_at": "2023-05-19T08:36:57.000000Z",
+    "isLoto": 1,
+    "busquedad": 5,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/super-kino-leidsa.png",
+    "company_id": 2,
+    "hora": "08:55 PM",
+    "quinielaDom": 0,
+    "titulo": "SUPER KINO TV (8:55 PM)",
+    "descripcion": "SuperKinoTV es un emocionante juego diario de LEIDSA. ",
+    "orden": null,
+    "img2": "spk.png",
+    "posicion": null,
+    "pais": "RD"
+  },
+  {
+    "id": 9,
+    "nombre": "Loto Leidsa",
+    "numero_total": 40,
+    "cantidad_premios": 6,
+    "codigo": null,
+    "created_at": "2023-05-19T08:37:48.000000Z",
+    "updated_at": "2023-05-19T08:37:48.000000Z",
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/loto-leidsa.png",
+    "company_id": 2,
+    "hora": "08:55 PM",
+    "quinielaDom": 0,
+    "titulo": "LOTO LEIDSA (MIERCOLE & JUEVES - 8:55 PM)",
+    "descripcion": "LEIDSA te da la bienvenida a su juego insignia.",
+    "orden": null,
+    "img2": "ll.png",
+    "posicion": null,
+    "pais": "RD"
+  },
+  {
+    "id": 10,
+    "nombre": "Loto 5",
+    "numero_total": 38,
+    "cantidad_premios": 5,
+    "codigo": null,
+    "created_at": "2023-05-19T08:39:03.000000Z",
+    "updated_at": "2023-05-19T08:39:03.000000Z",
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/199f8344da59f2b7d9caa4a47df05469.png",
+    "company_id": 4,
+    "hora": "08:00 PM",
+    "quinielaDom": 0,
+    "titulo": "LOTO 5 + (8:00 PM)",
+    "descripcion": "El Loto 5 es un sorteo millonario no acumulativo.",
+    "orden": null,
+    "img2": "l5.png",
+    "posicion": null,
+    "pais": "RD"
+  },
+  {
+    "id": 11,
+    "nombre": "Mega Lotto",
+    "numero_total": 38,
+    "cantidad_premios": 6,
+    "codigo": null,
+    "created_at": "2023-05-19T08:41:17.000000Z",
+    "updated_at": "2023-05-19T08:41:17.000000Z",
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/mega-lotto-loteka.png",
+    "company_id": 3,
+    "hora": "08:00 PM",
+    "quinielaDom": 0,
+    "titulo": "LOTTO LOTEKA (MARTE & JUEVES - 7:55 PM)",
+    "descripcion": "El Lotto Loteka es un sorteo millonario y acumulativo.",
+    "orden": null,
+    "img2": "ml.png",
+    "posicion": null,
+    "pais": "RD"
+  },
+  {
+    "id": 24,
+    "nombre": "Power Ball",
+    "numero_total": 69,
+    "cantidad_premios": 5,
+    "codigo": null,
+    "created_at": null,
+    "updated_at": null,
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/powerball.png",
+    "company_id": 10,
+    "hora": null,
+    "quinielaDom": 0,
+    "titulo": "Powerball ",
+    "descripcion": "El Powerball es uno de los sorteos más destacados.",
+    "orden": null,
+    "img2": "pm.png",
+    "posicion": null,
+    "pais": "USA"
+  },
+  {
+    "id": 26,
+    "nombre": "Mega Millions",
+    "numero_total": 70,
+    "cantidad_premios": 5,
+    "codigo": null,
+    "created_at": null,
+    "updated_at": null,
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/mega-millions.png",
+    "company_id": 10,
+    "hora": null,
+    "quinielaDom": 0,
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 8:09 PM]
+"titulo": "Mega Millions",
+    "descripcion": "El Mega Millions es uno de los sorteos más populares.",
+    "orden": null,
+    "img2": "mmi.png",
+    "posicion": null,
+    "pais": "USA"
+  },
+  {
+    "id": 27,
+    "nombre": "Mega Chance",
+    "numero_total": 99,
+    "cantidad_premios": 5,
+    "codigo": null,
+    "created_at": null,
+    "updated_at": null,
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/mega-chances-loteka.png",
+    "company_id": 3,
+    "hora": "07:55 PM",
+    "quinielaDom": 0,
+    "titulo": "MegaChance (7:55 PM)",
+    "descripcion": "El MegaChance es un juego de terminales diario.",
+    "orden": null,
+    "img2": "mc.png",
+    "posicion": null,
+    "pais": "RD"
+  },
+  {
+    "id": 39,
+    "nombre": "Cash4Life",
+    "numero_total": 60,
+    "cantidad_premios": 5,
+    "codigo": null,
+    "created_at": null,
+    "updated_at": null,
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/d946af56bd057d0211f55d62e42a55de.png",
+    "company_id": 10,
+    "hora": null,
+    "quinielaDom": null,
+    "titulo": "Cash4Life",
+    "descripcion": "Cash4Life es una lotería que se juega en varios estados.",
+    "orden": null,
+    "img2": "cl.png",
+    "posicion": null,
+    "pais": "USA"
+  },
+  {
+    "id": 41,
+    "nombre": "Loto Real",
+    "numero_total": 38,
+    "cantidad_premios": 6,
+    "codigo": null,
+    "created_at": null,
+    "updated_at": null,
+    "isLoto": 1,
+    "busquedad": 3,
+    "image": "https://cdn-lottery.kiskoo.com/loterias-dominicanas/loto-real.png",
+    "company_id": 6,
+    "hora": null,
+    "quinielaDom": null,
+    "titulo": "Loto Real",
+    "descripcion": "",
+    "orden": null,
+    "img2": "lr.png",
+    "posicion": null,
+    "pais": "RD"
+  }
+]
+
+api to generate a table of the most winning numbers of a lottery selected:
+https://api3.bolillerobingoonlinegratis.com/api/tabla/create?loteria_id=38&fecha=2025-03-01&posicion=0
+
+json format example:
+[
+    {
+        "ultimaFecha": "2024-11-06",
+        "diasTranscurridos": 200,
+        "numero": "30",
+        "retrasoMax": 202
+    },
+    {
+        "ultimaFecha": "2024-11-13",
+        "diasTranscurridos": 193,
+        "numero": "23",
+        "retrasoMax": 211
+    },
+    {
+        "ultimaFecha": "2024-12-30",
+        "diasTranscurridos": 147,
+        "numero": "65",
+        "retrasoMax": 150
+    }
+]
+
+api lotteries predictions lottery selected predictions, numbers hot predictions:
+https://api3.bolillerobingoonlinegratis.com/api/predicciones?loteria_id=33&fecha=2025-06-03
+
+json format example: 
+{
+    "prediccion": [
+        {
+            "id": 83050,
+            "fecha": "2025-06-03",
+            "loteria_id": 5,
+            "tipo": "Tabla Caliente",
+            "numeros": "67-35-41-30-42-28-40-63-99-32",
+            "created_at": "2025-06-03T01:04:13.000000Z",
+            "updated_at": "2025-06-03T01:04:13.000000Z",
+            "dias": "3-3-2-2-2-2-2-2-2-2"
+        },
+        {
+            "id": 83051,
+            "fecha": "2025-06-03",
+            "loteria_id": 5,
+            "tipo": "Tabla Numeros",
+            "numeros": "43-79-39-06-98-54-12-86-25-84",
+            "created_at": "2025-06-03T01:04:20.000000Z",
+            "updated_at": "2025-06-03T01:04:20.000000Z",
+            "dias": "438-376-368-354-352-331-281-279-273-257"
+        },
+        {
+            "id": 83052,
+            "fecha": "2025-06-03",
+            "loteria_id": 5,
+            "tipo": "Tabla Un Dia Como Hoy",
+            "numeros": "98-14-15-52-53-83-42-72-56-76",
+            "created_at": "2025-06-03T01:04:20.000000Z",
+            "updated_at": "2025-06-03T01:04:20.000000Z",
+            "dias": "9-8-7-7-6-6-6-6-6-6"
+        }
+    ],
+    "loteria": {
+        "id": 5,
+        "nombre": "Quiniela Leidsa",
+        "numero_total": 100,
+        "cantidad_premios": 3,
+        "codigo": null,
+        "created_at": "2023-05-19T08:33:10.000000Z",
+        "updated_at": "2023-05-19T08:33:10.000000Z",
+        "isLoto": 0,
+        "busquedad": 0,
+        "image": "https:\/\/cdn-lottery.kiskoo.com\/loterias-dominicanas\/quiniela-leidsa.png",
+        "company_id": 2,
+        "hora": "09:00 PM",
+        "quinielaDom": 1,
+        "titulo": "QUINIELA LEIDSA (8:55 PM)",
+        "descripcion": "En el emocionante sorteo de Leidsa. ",
+        "orden": null,
+        "img2": "qp.png",
+        "posicion": 17,
+        "pais": "RD"
+    },
+    "sorteo": {
+        "id": 188307,
+        "premios": "31-85-14",
+        "numero_sorteo": null,
+        "fecha_sorteo": "2025-06-02",
+        "loteria_id": 5,
+        "created_at": "2025-06-03T01:04:13.000000Z",
+        "updated_at": "2025-06-03T01:04:13.000000Z",
+        "loto1": null,
+        "loto2": null
+    }
+}
+
+AND A API TO IMPLEMENT LOCATION DETECTION SO FOR THE LANGUAGE AUTOMATICALLY CHANGE IN THE WEBSITE:
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 7:47 PM]
+api for location, latitude and longitude search to identify exact location:
+
+main api loaded: 
+https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=
+
+json result:
+
+{
+  "latitude": 18.459999084472656,
+  "lookupSource": "ip geolocation",
+  "longitude": -70.12000274658203,
+  "localityLanguageRequested": "en",
+  "continent": "North America",
+  "continentCode": "NA",
+  "countryName": "Dominican Republic (the)",
+  "countryCode": "DO",
+  "principalSubdivision": "Provincia de San Cristobal",
+  "principalSubdivisionCode": "DO-21",
+  "city": "San Cristobal",
+  "locality": "San Cristobal",
+  "postcode": "",
+  "plusCode": "77CFFV5H+XX",
+  "localityInfo": {
+    "administrative": [
+      {
+        "name": "Dominican Republic (the)",
+        "description": "island sovereign state in the Caribbean Sea",
+        "isoName": "Dominican Republic (the)",
+        "order": 6,
+        "adminLevel": 2,
+        "isoCode": "DO",
+        "wikidataId": "Q786",
+        "geonameId": 3508796
+      },
+      {
+        "name": "Provincia de San Cristobal",
+        "description": "province of the Dominican Republic",
+        "isoName": "Provincia de San Cristobal",
+        "order": 10,
+        "adminLevel": 4,
+        "isoCode": "DO-21",
+        "wikidataId": "Q1366107",
+        "geonameId": 3493186
+      },
+      {
+        "name": "San Cristobal",
+        "description": "municipality of Dominican Republic",
+        "order": 11,
+        "adminLevel": 6,
+        "wikidataId": "Q373759",
+        "geonameId": 3511540
+      }
+    ],
+    "informative": [
+      {
+        "name": "North America",
+        "description": "continent",
+        "isoName": "North America",
+        "order": 1,
+        "isoCode": "NA",
+        "wikidataId": "Q49",
+        "geonameId": 6255149
+      },
+      {
+        "name": "West Indies",
+        "description": "island region in the Caribbean",
+        "order": 2,
+        "wikidataId": "Q669037",
+        "geonameId": 3571219
+      },
+      {
+        "name": "Greater Antilles",
+        "description": "island group to the west of the Antilles archipelago",
+        "order": 3,
+        "wikidataId": "Q128011",
+        "geonameId": 3574469
+      },
+      {
+        "name": "Antilles",
+        "description": "archipelago bordering the north and east of the Caribbean Sea",
+        "order": 4,
+        "wikidataId": "Q166131",
+        "geonameId": 3491552
+      },
+      {
+        "name": "America/Santo_Domingo",
+        "description": "time zone",
+        "order": 5
+      },
+      {
+        "name": "Hispaniola",
+        "description": "island in the Caribbean",
+        "order": 7,
+        "wikidataId": "Q25277",
+        "geonameId": 3504558
+      },
+      {
+        "name": "Suroeste",
+        "order": 8
+      },
+      {
+        "name": "Valdesia",
+        "description": "region of the Dominican Republic",
+        "isoName": "Valdesia",
+        "order": 9,
+        "isoCode": "DO-41",
+        "wikidataId": "Q2671273",
+        "geonameId": 11776502
+      },
+      {
+        "name": "Monumento Natural Reserva Antropologica Cuevas de Borbon o del Pomier",
+        "order": 12
+      }
+    ]
+  }
+}
+
+example of prompts extracted from the main api loaded:
+
+https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=18.2747136&longitude=-70.3102976&localityLanguage=es
+
+json result:
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 7:47 PM]
+{
+  "latitude": 18.2747136,
+  "lookupSource": "coordinates",
+  "longitude": -70.3102976,
+  "localityLanguageRequested": "es",
+  "continent": "América del Norte",
+  "continentCode": "NA",
+  "countryName": "República Dominicana",
+  "countryCode": "DO",
+  "principalSubdivision": "Peravia",
+  "principalSubdivisionCode": "DO-17",
+  "city": "Baní",
+  "locality": "Baní",
+  "postcode": "",
+  "plusCode": "77CF7MFQ+VV",
+  "localityInfo": {
+    "administrative": [
+      {
+        "name": "República Dominicana",
+        "description": "país de América Insular y el Caribe",
+        "isoName": "Dominican Republic (the)",
+        "order": 6,
+        "adminLevel": 2,
+        "isoCode": "DO",
+        "wikidataId": "Q786",
+        "geonameId": 3508796
+      },
+      {
+        "name": "Peravia",
+        "description": "provincia de la República Dominicana",
+        "isoName": "Provincia de Peravia",
+        "order": 10,
+        "adminLevel": 4,
+        "isoCode": "DO-17",
+        "wikidataId": "Q1331932",
+        "geonameId": 3495015
+      },
+      {
+        "name": "Baní",
+        "description": "municipio de la República Dominicana",
+        "order": 11,
+        "adminLevel": 6,
+        "wikidataId": "Q1902349",
+        "geonameId": 3512067
+      }
+    ],
+    "informative": [
+      {
+        "name": "América del Norte",
+        "description": "subcontinente septentrional de América",
+        "isoName": "North America",
+        "order": 1,
+        "isoCode": "NA",
+        "wikidataId": "Q49",
+        "geonameId": 6255149
+      },
+      {
+        "name": "Indias Occidentales",
+        "description": "Región del Oceano Atlantico",
+        "order": 2,
+        "wikidataId": "Q669037",
+        "geonameId": 3571219
+      },
+      {
+        "name": "Antillas Mayores",
+        "description": "grupo de islas en el Caribe",
+        "order": 3,
+        "wikidataId": "Q128011",
+        "geonameId": 3574469
+      },
+      {
+        "name": "Antillas",
+        "description": "región de América, bañada por el mar Caribe",
+        "order": 4,
+        "wikidataId": "Q166131",
+        "geonameId": 3491552
+      },
+      {
+        "name": "America/Santo_Domingo",
+        "description": "huso horario",
+        "order": 5
+      },
+      {
+        "name": "La Española",
+        "description": "isla de las Antillas Mayores",
+        "order": 7,
+        "wikidataId": "Q25277",
+        "geonameId": 3504558
+      },
+      {
+        "name": "Suroeste",
+        "order": 8
+      },
+      {
+        "name": "Valdesia",
+        "description": "región de República Dominicana",
+        "isoName": "Valdesia",
+        "order": 9,
+        "isoCode": "DO-41",
+        "wikidataId": "Q2671273",
+        "geonameId": 11776502
+      }
+    ]
+  }
+}
+
+and thats how it works to take the exact location of the user, after getting the exact location can extract data like "countryName" - "countryCode" - "principalSubdivision" - "principalSubdivisionCode" - "city" - "locality" - and maybe the exact google location map code "plusCode" also the locality language to define the language of the website or the app, this is useful "localityLanguageRequested", also more data but this was an example of how useful is all of this.
+
+
+AND THERES THE LOTTERY DETAILS FOR SOME SECTIONS AND INFO AND FLOATING MODALS WHEN CLICK A LOTTERY IN THE LIST TO SEE MORE RESULTS OF THE LOTTERY SELECTED: 
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:36 PM]
+INFORMATION OF THE DOMINICAN REPUBLIC LOTTERIES
+
+Loterías Dominicanas:
+
+El Elboletoganador.com te proporciona los resultados de las loterías dominicanas en tiempo real. Encuentra tus quinielas preferidas y una variedad de tablas estadísticas para mejorar tus resultados. Haz clic en la sección de loterías para ver todos los sorteos agrupados por empresa y en Quinielas para encontrarlos ordenados por horario.
+
+
+Lotería Nacional:
+Es una lotería creada por el padre Francisco Xavier Billini el 24 de Octubre de 1882, con el fin de ayudar a las causas de beneficencia y a los más pobres. En ese entonces funcionaba bajo el nombre de "La Lotería del Padre Billini". La Lotería Nacional es una institución de la Administración Pública. Cuenta con diversos sorteos como: Juega Mas, Pega Mas - Quiniela Gana Mas - Quiniela Lotería Nacional Noche - Billetes Domingo.
+
+
+Leidsa:
+Es una lotería que ofrece servicios en la República Dominicana, fundada en fecha 1ro de noviembre de 1997, siendo una de las más reconocidas en el país. Ofrece una variedad de sorteos y servicios relacionados con la lotería. Cuenta con diversos sorteos como: Pega 3 Más, Loto Pool, Súper Kino TV, Quiniela Pale Leidsa y Loto - Loto Más – Super Mas.
+
+
+Loteria Real:
+Es una lotería que ofrece servicios en la República Dominicana, la cual efectúa sus sorteos electrónicos desde la ciudad de Santiago. La Loto Real ofrece los sorteos: Loto Real, Quiniela Real, Quinielita Real y Pega 4 Real.
+
+
+Loteka:
+Es una lotería que ofrece servicios en la República Dominicana. Esta cuenta con el sorteo Quiniela Loteka, la cual se hace diariamente. Loteka, ofrece diversos sorteos como: Lotto Loteka – MegaChance – Repartidera del MegaChance – Quiniela Loteka – Toca 3.
+
+
+La Primera:
+Es una empresa de loterías electrónicas Dominicana fundada en 2019. Se encarga de ofrecer juegos diarios de quiniela, palé y tripleta. Sus sorteos se realizan dos veces al día, a las 12:00 del medio día y a las 8:00 de la noche. La Primera cuenta con sorteos como: Quiniela La Primera (2 veces al día) – Loto 5 Mas.
+
+
+LoteDom:
+Es una empresa de juegos de azar y servicios electrónico certificada legalmente en República Dominicana en el año 2014. A través de sus sorteos se encarga de promover el desarrollo de una sociedad y satisfacer las expectativas de los consumidores de los juegos de lotería. LoteDom, ofrece servicios como: Quiniela LoteDom – El Quemaito Mayor – Super Pale LoteDom – Agarra 4.
+
+
+La Suerte Dominicana:
+Es una de las compañías de juegos de azar fundada en la República Dominicana en el 2020. Ofrece dos sorteos diarios: el primero a las 12:30 pm y 6:00 pm. Su objeto principal son las ventas y comercialización de los juegos de azar. Sus sorteos son verificados y certificados por el Ministerio de Hacienda, la Lotería Nacional, auditores externos y notarios públicos. Sus sorteos de Quiniela, Palé y Tripleta son realizados manualmente.
+
+
+New York Lottery:
+Este sorteo de Quiniela, NO ES UN SORTEO oficial de la República Dominicana. Es extraído de 2 sorteos de la New York Lottery como lo son, El Pick 3 (Toman los dos últimos dígitos para el primer Bolo) y el Pick 4 (Toman los 4 dígitos para formar los números de Segunda y Tercera posición). Alertamos a los jugadores que la venta de este sorteo no está regulado por el Ministerio de Hacienda, por lo cual no hay a quien reclamarle. Juegue con Precaución.
+
+
+Florida Lottery:
+Este sorteo de Quiniela, NO ES UN SORTEO oficial de la República Dominicana. Es extraído de 2 sorteos de la Florida Lottery como lo son, El Pick 3 (Toman los dos últimos dígitos para el primer Bolo) y el Pick 4 (Toman los 4 dígitos para formar los números de Segunda y Tercera posición). Alertamos a los jugadores que la venta de este sorteo no está regulada por el Ministerio de Hacienda, por lo cual no hay a quien reclamarle. Juegue con Precaución.
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:36 PM]
+Anguila Lottery:
+Madroka Anguilla Lottery, es una institución autorizada para promover los juegos de lotería en el Caribe, además como primera lotería del pueblo de Anguilla cuenta con la aprobación del gobierno de Anguilla para administrar y operar sus sorteos. Esta cuenta con 13 sorteos de Quinielas sorteados 1 por cada hora.
+
+
+King Lottery:
+Philipsburg Lottery es un sorteo de King Lottery, con sede en la isla San Martín. Se transmite todos los días para diferentes islas del Caribe, entre ellas República Dominicana. El sorteo Philipsburg Lottery se emite diariamente a las 12:30 del medio día a través de los canales locales Teleunión canal 16 y Megavisión canal 43.
+
+
+Horarios Loterías Dominicanas:
+La Primera: 12:00 pm y 8:00 pm
+La Suerte Dominicana: 12:30 pm y 6:00 pm
+Lotería Real: 12:55 pm
+LoteDom: 1:55 pm
+Lotería Nacional: 2:30 pm, 9:00 pm (6:00 pm los domingos)
+Loteka: 7:55 pm
+Leidsa: 8:55 (3:55 pm los domingos)
+
+Sorteos Millonarios:
+Loto Más de Leidsa: 8:55 pm miércoles y sábados
+Mega Lotto de Loteka: 7:55 pm lunes y jueves
+Loto Real: 12:55 pm martes y viernes
+Loto 5 La Primera: 8:00 pm diario
+PowerBall: 10:59 pm lunes, miércoles y sábados
+MegaMillions: 11:00 pm martes y viernes
+
+Loterías Extranjeras:
+Anguila Lottery: 10:00 am
+King Lottery: 12:30 am
+Florida: 1:30 pm
+New York: 2:30 pm
+Anguila Lottery: 6:00 pm
+King Lottery: 7:30 pm
+Anguila Lottery: 9:00 pm
+Florida: 9:50 pm
+New York: 10:30 pm
+* Los horarios de los sorteos pueden variar en días festivos.
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:37 PM]
+Si por alguna circunstancia hay un retraso en las loterías de más de 5-10 minutos, se les informará a través de un mensaje colocado donde salen los resultados.
+
+Si en algún momento no ven los resultados correspondientes al día en curso, les sugerimos revisar los días feriados de la República Dominicana. Estos días la Lotería Nacional y Leidsa no realizan sus sorteos, a diferencia de Loteka y Loteria Real, quienes regularmente hacen sus sorteos, con excepción de algunos días, como Navidad y Año Nuevo.
+
+Habitualmente, los sorteos de las compañías Loteka y Lotería Real se realizan una hora más temprano los días feriados.  Sin embargo otros sorteos, como La Primera, LoteDom y La Suerte Dominicana, hacen sus diferentes sorteos con normalidad. 
+
+Los primeros resultados que Loterías Dominicanas ofrece inicia a las 10:00 de la mañana, con el sorteo de Anguila Lottery y culmina con su último sorteo a las 11:25 de la noche con los sorteos de la Lotería de Florida. 
+
+Validación
+En el portal de Loterías Dominicana nos encargamos de ofrecer los resultados de todos los sorteos de manera veloz y verídica. Ofreciendo así una información inmediata pero a la vez asegurándonos de ofrecer los datos lo más correcto posible. Con la actualización del check, o palomita de verificación (✓), revisamos y comprobamos que los números ofrecidos correspondan a los números reales. (Si la palomita sale en color verde, los sorteos han sido confirmados, si sale gris, aún no han sido revisados). Independientemente, siempre recomendamos consultar con la compañía oficial si sospecha de poseer un boleto premiado. 
+
+A continuación te presentamos los Sorteos Especiales de las Loterías Dominicana, considerado así por ofrecer premios millonarios en cada sorteo. Conozca los días y hora en que se realiza cada uno.  
+
+Sorteos Especiales en Loterías Dominicanas:
+Loto Leidsa: Miércoles y sábado (8:55 PM)
+Loto Real: Martes y viernes (12:55)
+Mega Lotto de Loteka: Lunes y jueves (7:55 PM)
+PowerBall: Lunes, miércoles y sábados a las (10:59 PM)
+Megamillions: Martes y viernes (11:00 PM)
+
+Horarios de Loterías Dominicanas:
+12:00 pm La Primera
+12:00 pm LoteDom
+12:30 pm La Suerte Dominicana
+12:55 pm Lotería Real 
+2:30 pm Lotería Nacional
+6:00 pm La Suerte Dominicana
+7:55 pm: Loteka
+8:00 pm La Primera
+8:55 pm: Leidsa (Domingos 3:55 pm)
+9:00 pm Lotería Nacional (Domingos 6:00 pm)
+Horarios de Loterías Extranjeras:
+10:00 am Anguila Lottery
+12:30 am King Lottery
+1:00 pm Anguila Lottery
+1:30 pm Florida
+2:30 pm New York
+6:00 pm Anguila Lottery
+7:30 pm King Lottery
+9:00 pm Anguila Lottery
+9:50 pm Florida
+10:30 pm New York
+Requerimientos para Jugar
+Ser mayor de edad es la única condición que se necesita para jugar en una de las loterías de la República Dominicana.
+
+Cambios de Hora:
+Los horarios de los sorteos de quinielas de New York varían todos los años con el cambio de hora entre República Dominicana y los Estados Unidos. Por eso el sorteo de las 2:30 pm y 10:30 pm cambia para la 3:30 pm y 11:30 pm. Estos sorteos funcionan de igual manera que las otras quinielas en República Dominicana.
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:37 PM]
+Impuestos:
+
+
+Retenciones de Impuestos en Loterías Dominicanas:
+En la Ley 253-12, sobre el Fortalecimiento de la Capacidad Recaudatoria del Estado para la Sostenibilidad Fiscal, en su artículo 10 sobre los impuestos a los premios, existe una escala para aplicar un % de retención de impuestos a las Loterías Dominicanas.
+
+Impuesto Sobre la Renta (ISR) que se retienen a los premios según aplique:
+Todos los premios de RD$1 a RD$100,001 están exentos de impuestos.
+Para los premios entre RD$100,001 a RD$500,000 se aplica el 10%.
+Las ganancias entre RD$500,001 a RD$1,000,000 se aplicará un 15%.
+A partir de RD$1,000,001 se aplica el 25%.
+Recordamos que todas las bancas de loterías dominicanas asumen el mismo tipo de retenciones, es decir que se le aplica la misma escala de retención de impuestos a los juegos de azar de las Loterías Dominicanas: Lotería Nacional, Real, Leidsa, Loteka, Primera, La Suerte Dominicana y LoteDom.
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:38 PM]
+Reclamaciones:
+
+Reclamaciones de Loterías Dominicanas:
+En República Dominicana casi todas las empresas de loterías tienen iguales directrices para las reclamaciones, mayormente dan un plazo de 60 días a los jugadores para reclamar sus boletos premiados. Una vez culminado el tiempo establecido, de no ser reclamado, el monto caducado se sumará al acumulado del próximo sorteo. Según la política que tenga cada empresa.
+
+Es imprescindible presentar el boleto original de tu jugada y su cédula de identidad y electoral, de lo contrario no podrás reclamar un premio. Por esta razón siempre recomendamos guardar su tickets en un lugar seguro, nunca romperlo, verificar siempre los premios en las páginas oficiales antes de tomar una decisión.
+
+Si tienes duda o desea más información comunicarse directamente con la compañía de lotería:
+
+Servicio al Cliente:
+Lotería Nacional: 809-533-5222 Exts.: 2247
+Leidsa: 809-338-2222
+Lotería Real: 809-540-9444
+La Primera: 809-262 1001.
+Loteka: 809-621-2626
+La Suerte Dominicana: 809-226-0797
+LoteDom: 809-541-0044
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:38 PM]
+en vilug.com, es una página web que se especializa en resultados de loterías de la República Dominicana y Nueva York creado y trabajado por MRL Web Management. Llevamos desde Septiembre del 2011 subiendo resultados de loterías y hoy contamos con la App de Loterías Dominicana, una reconocida y descargada aplicación en República Dominicana, disponible para Android y iOS.
+
+En Loterías Dominicanas no se comercializan sorteos de loterías, en otras palabras, no vendemos ni comercializamos sorteos de loterías. Somos una página exclusivamente informativa, ademas de resultados instantáneos de todos los sorteos, brindamos informaciones de cada sorteo (como se juega, cómo son los premios, los horarios, probabilidades y más). 
+
+Actualmente ofrecemos los Resultados de las siguientes compañías en Loterías Dominicanas:
+
+Lotería Nacional Dominicana
+Leidsa
+Lotería Real
+Loteka
+New York (NYLottery) 
+Con el tiempo hemos ido innovando y ofreciéndole nuevos productos a nuestros usuarios como son:
+
+Años Anteriores: Los últimos tres resultados anteriores de las quinielas en la misma fecha de hoy.
+Números fríos y calientes de Quinielas.  
+Consultar Números: Manera de verificar estadísticas de números en específicos de quinielas. 
+Pronósticos: Utilizando los números fríos y calientes, ofrecemos cuales son los números que deberían salir en base de probabilidades. 
+Con el tiempo hemos ido creciendo y ofreciendo nuestros servicios en otros países. Actualmente contamos con LoteriasdeColombia.co, que ofrece todos los resultados de loterías de Colombia, país con más de 40 sorteos diferentes. LoteriasdeMexico.com, con resultados de Lotenal y Pronósticos, compañías de loterías en México.
+
+Para más información o si tiene alguna duda o pregunta con respeto a Loterías Dominicanas, no dude en contactarnos. Sólo presione donde dice Contacto en el pie de la página y llene el formulario.
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:39 PM]
+Horario de los Sorteos para Navidad y Año Nuevo
+En el país durante los días feriados algunas loterías no realizan sus acostumbrados sorteos y las festividades de Navidad y Año Nuevo, no son la excepción. Las compañías de juegos de azar Lotería Nacional y Leidsa no realizan sorteos en estas fechas, sin embargo, otros concesionarios de loterías dominicanas y americanas que se comercializan en el país sí emiten sus sorteos, estos son:
+
+24 de diciembre
+
+- Lotería Real (12:55 pm)
+- Loteka (5:00 pm)
+- LoteDom (2:55 pm)
+- La Primera (12:00 pm - 8:00 pm)
+- La Suerte Dominicana (12:30 pm)
+- New York (2:30 pm - 10:30 pm)
+- Anguila (10:00 am - 1:00 pm - 6:00 pm)
+- King Lottery (12:30 pm - 7:30 pm)
+- Florida (1:30 pm - 9:45 pm)
+
+25 de diciembre
+
+- Lotería Real (12:55 pm)
+- LoteDom (2:55 pm)
+- La Primera (12:00 pm)
+- La Suerte Dominicana (12:30 pm)
+- New York (2:30 pm - 10:30 p)
+- Florida (1:30 pm - 9:45 pm)
+
+31 de diciembre
+
+- Lotería Real (12:55 pm)
+- Loteka (5:00 pm)
+- LoteDom (2:55 pm)
+- La Primera (12:00 pm - 8:00 pm)
+- La Suerte Dominicana (12:30 pm)
+- New York (2:30 pm - 10:30 pm)
+- Anguila (10:00 am - 1:00 pm - 6:00 pm)
+- King Lottery (12:30 pm - 7:30 pm)
+- Florida (1:30 pm - 9:45 pm)
+
+1 de enero
+
+- Lotería Real (12:55 pm)
+- LoteDom (2:55 pm)
+- La Primera (12:00 pm)
+- La Suerte Dominicana (12:30 pm)
+- New York (2:30 pm - 10:30 pm)
+- Florida (1:30 pm - 9:45 pm)
+
+* Los horarios con asterisco, son los sorteos nocturnos que por la hora en que se emiten, pueden estar sujetos a cambios. Para conocer sobre los cambios les invitamos a mantenerse al tanto de las actualizaciones de los horarios de los sorteos para Navidad y Año Nuevo.
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:39 PM]
+Fecha y Horarios de las Loterías Dominicanas
+En República Dominicana se realizan diversos sorteos de loterías que se llevan a cabo en diferentes horarios. De estas loterías dominicanas, algunas se realizan todos los días, otras de lunes a sábado y también están los sorteos que se hacen dos veces a la semana o un solo día.
+
+Los horarios de las loterías dominicanas pueden variar los días feriados en el país, algunos incluso no se realizan esos días, como los diferentes sorteos de la Lotería Nacional. 
+
+Lotería Nacional
+Lunes a Sábado:
+2:30 PM: Juega + Pega +, Gana Más.
+9:00 PM: Lotería Nacional
+
+Domingo:
+2:30 PM: Juega + Pega +, Gana Más.
+6:00 PM: Loteria Nacional (Billetes)
+
+Leidsa
+Lunes a Sábado:
+8:55 PM:  Pega 3 Más, Loto Pool, Super Kino TV, Quiniela Leidsa. 
+
+Domingo:
+3:55 PM: Pega 3 Más, Loto Pool, Super Kino TV, Quiniela Leidsa. 
+
+Loto Leidsa:
+8:55 PM: Miércoles y Sábados
+
+Lotería Real
+Lunes a Domingo:
+12:55 PM: Tu Fecha, Pega 4, Loto Pool, Nueva Yol Real, Quiniela Real
+
+Loto Real:
+12:55 PM: Martes y Sábados
+
+Loteka
+Lunes a Domingo: 
+7:55 PM: Quiniela, Mega Chances, MC Repartidera, Toca 3
+
+MegaLotto:
+7:55 PM Lunes y Jueves
+
+LoteDom
+Lunes a Domingo:
+12:00 PM: Quiniela, Quemaito Mayor, Super Palé, Agarra 4
+
+La Primera
+Lunes a Domingo:
+
+12:00 PM: Primera Día
+8:00 PM: Primera Noche, Loto 5
+
+La Suerte Dominicana
+Lunes a Domingo:
+12:30 PM, 6:00 PM
+
+Loterías Extranjeras: 
+
+
+Anguila
+Lunes a Domingo:
+10:00 AM, 1:00 PM, 6:00 PM, 9:00 PM
+
+King Lottery
+Lunes a Domingo 
+12:30 PM, 7:30 PM: Pick 3, Pick 4, Quiniela, Loto Pool, Philipsburg
+
+New York 
+Lunes a Domingo:
+2:30 PM, 10:30 PM
+
+Florida
+Lunes a Domingo:
+1:30 PM, 9:45 pm
+
+Mega Millions
+11:00 PM: Martes y Viernes:
+
+PowerBall
+11:00 PM: Miércoles y Sábado
+
+Cash 4 Life
+Lunes a Domingo
+9:00 PM
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:47 PM]
+Loterías Dominicanas:
+En Conectate.com.do te ofrecemos los resultados de las loterías dominicana en tiempo real. Al clickear en la sección de Loterías podrás elegir portada, para ver los números ganadores de todos los sorteos o seleccionar la compañía de juegos de azar que deseas consultar. 
+
+Lotería Nacional: Es la primera institución del estado fundada el 24 de octubre de 1882 con la finalidad de mantener una institución de caridad, ya hoy día es una de las principales loterías del país, la cual ofrece los sorteos Gana Más y Lotería Nacional. 
+
+Leidsa: Esta es una de las loterías que operó por primera vez de forma electrónica, por lo que es considerada como la lotería electrónica internacional dominicana. Cuenta con diversos sorteos como: Pega 3 Más, Loto Pool, Súper Kino TV, Quiniela Leidsa y Loto - Loto Más.
+
+Loteria Real: Es una de las empresas dedicadas a los juegos de azar en el país, la cual efectúa sus sorteos electrónicos desde la ciudad de Santiago. La Loto Real ofrece los sorteos: Loto Real, Quiniela Real, Quinielita Real y Pega 4 Real.
+
+Loteka: Es una de las loterías de los juegos de azar más recientes en la República Dominicana. Esta cuenta con el sorteo Quiniela Loteka, la cual se hace diariamente.
+
+La Primera: Es una empresa de loterías electrónicas Dominicana fundada en 2019. Se encarga de ofrecer juegos diarios de quiniela, palé y tripleta. Sus sorteos se realizan dos veces al día, a las 12:00 del medio día y a las 8:00 de la noche. La Primera cuenta con su sorteo millonario Loto 5 Más, el cual se realiza todos los días a las 8:00 pm.
+
+LoteDom: Es una empresa de juegos de azar y servicios electrónico certificada legalmente en República Dominicana en el año 2014. A través de sus sorteos, se encarga de promover el desarrollo de una sociedad y satisfacer las expectativas de los consumidores de los juegos de lotería. 
+
+La Suerte Dominicana: Es una de las compañías de juegos de azar fundada en la República Dominicana en el 2020. Ofrece dos sorteos diarios: el primero a las 12:30 pm y 6:00 pm. Su objeto principal son las ventas y comercialización de los juegos de azar. Sus sorteos son verificado y certificado por el Ministerio de Hacienda, la Lotería Nacional, auditores externos y notarios públicos. Sus sorteos de Quiniela, Palé y Tripleta son realizados manualmente.
+
+Horarios Loterías Dominicanas:
+La Primera: 12:00 pm y 8:00 pm
+La Suerte Dominicana: 12:30 pm y 6:00 pm
+Lotería Real: 12:55 pm
+LoteDom: 1:55
+Lotería Nacional: 2:30 pm, 9:00 pm (6:00 pm los domingos)
+Loteka: 7:55 pm
+Leidsa: 8:55 (3:55 pm los domingos)
+
+
+Sorteos Millonarios:
+Loto Más de Leidsa: 8:55 pm miércoles y sábados
+Mega Lotto de Loteka: 7:55 pm lunes y jueves
+Loto Real: 12:55 pm martes y viernes
+Loto 5 La Primera: 8:00 pm diario
+PowerBall: 10:59 pm lunes, miércoles y sábados
+Megamillions: 11:00 pm martes y viernes 
+
+
+Loterías Extranjeras:
+Anguila Lottery: 10:00 am
+King Lottery: 12:30 am
+Anguila Lottery: 1:00 pm
+Florida: 1:30 pm
+New York: 2:30 pm
+Anguila Lottery: 6:00 pm
+King Lottery: 7:30 pm
+Anguila Lottery: 9:00 pm
+Florida: 9:50 pm
+New York: 10:30 pm
+
+* Los horarios de los sorteos pueden variar los días festivos.
+
+Aclaramos que no somos la página oficial de los sorteos, sino que somos un portal web creado con la finalidad de brindar informaciones de cada uno de los sorteos de las loterías dominicanas, incluyendo los números ganadores de todas las compañías de loterías que se encuentran debidamente autorizadas en la República Dominicana. Para despejar duda sobre alguno de los resultados publicados aquí, exhortamos a compararlos con el portal oficial del sorteo. Nosotros hacemos lo posible para ofrecer los resultados de manera precisa y concisa; el margen de errores es muy bajo, sin embargo, para despejar dudas sobre algún sorteo, siempre recomendamos comprobarlo con su portal oficial.
+
+API Master RD 🌐👨‍💻🔗, [6/3/2025 6:47 PM]
+Sabiendo que los juegos de azar son una realidad mundial que trasciende las fronteras nacionales y que son practicados por diversos sectores sociales y económicos, tal como se cita en la Ley 29-06, recomendamos realizar sus apuestas con moderación, para evitar que los juegos de azar se conviertan en una adicción. Así mismo, recordamos que los juegos de azar están prohibidos en menores de 18 años de edad.

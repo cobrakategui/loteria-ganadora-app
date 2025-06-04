@@ -1,0 +1,225 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 240 5% 8%;
+    --foreground: 0 0% 98%;
+    --card: 240 5% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 4% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 4% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 15%;
+    --input: 240 4% 15%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-color: hsl(0 0% 100%);
+  }
+  
+  body.dark {
+    background-color: hsl(240 5% 8%);
+  }
+  
+  .lottery-number {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 3px rgba(59, 130, 246, 0.2);
+  }
+  
+  .lottery-number-mas {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm;
+    background: #60a5fa;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .lottery-number-super {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm;
+    background: #ef4444;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .lottery-card {
+    @apply bg-card/80 rounded-xl p-4 border border-border/30 backdrop-blur-md;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(37, 99, 235, 0.03) 50%, rgba(29, 78, 216, 0.02) 100%);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.05);
+  }
+  
+  .nav-item {
+    @apply flex flex-col items-center justify-center py-2 px-3 rounded-lg transition-all duration-200 min-h-[60px];
+  }
+  
+  .nav-item.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+    @apply text-white;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.4);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-lottery-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+  }
+
+  .text-lottery-blue {
+    color: #3b82f6;
+  }
+
+  @keyframes confetti {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  @keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
+  }
+
+  .animate-confetti {
+    animation: confetti 3s linear infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideInUp 0.5s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  .date-picker-input {
+    cursor: pointer;
+  }
+
+  .date-picker-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .numbers-scroll {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 transparent;
+  }
+
+  .numbers-scroll::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .numbers-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .numbers-scroll::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 2px;
+  }
+
+  .numbers-container {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: max-content;
+  }
+
+  .numbers-container-horizontal {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    min-width: max-content;
+  }
+
+  .numbers-container-horizontal::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .numbers-container-horizontal::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .numbers-container-horizontal::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 2px;
+  }
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  @apply rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
