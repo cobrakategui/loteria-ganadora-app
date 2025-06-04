@@ -43,22 +43,22 @@ export function Home() {
     try {
       setLoading(true);
       const dateStr = format(selectedDate, 'yyyy-MM-dd');
+      const today = format(new Date(), 'yyyy-MM-dd');
+      
+      console.log('Loading data for date:', dateStr, 'category:', selectedCategory);
       
       let response;
-      if (selectedCategory === 'todas') {
-        // Load all lotteries for today (default)
-        if (format(selectedDate, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd')) {
-          response = await LotteryAPI.getLotteryResults();
-        } else {
-          response = await LotteryAPI.getLotteryResults(dateStr, 0);
-        }
+      
+      if (selectedCategory === 'todas' && dateStr === today) {
+        // Load all lotteries for today without date parameter
+        response = await LotteryAPI.getLotteryResults();
       } else {
-        // Load specific category
+        // Load with specific date and category
         const companyId = getCategoryCompanyId(selectedCategory);
         response = await LotteryAPI.getLotteryResults(dateStr, companyId);
       }
       
-      console.log('Lottery results:', response);
+      console.log('API Response:', response);
       
       const allLotteries = [...(response.loteria || []), ...(response.loto || [])];
       
@@ -78,6 +78,7 @@ export function Home() {
     } catch (error) {
       console.error('Error loading lottery results:', error);
       toast.error('Error al cargar los resultados');
+      setLotteries([]);
     } finally {
       setLoading(false);
     }
@@ -123,11 +124,13 @@ export function Home() {
   };
 
   const handleCategoryChange = (value: string) => {
+    console.log('Category changed to:', value);
     setSelectedCategory(value);
   };
 
   const handleDateSelect = (date: Date | undefined) => {
     if (date) {
+      console.log('Date selected:', date);
       setSelectedDate(date);
     }
   };
